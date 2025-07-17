@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Climate Change Analysis</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+
+</head>
+<body>
+    <div class="container">
+        <h1>🌍 Climate Change Analysis</h1>
+
+        <form method="POST" action="/predict" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <br><br>
+            <button type="submit" name="action" value="predict">Analyze</button>
+        </form>
+
+
+          {% if output is defined and output %}
+    <div class="result">
+        {{ output|safe }}
+    </div>
+{% endif %}
+
+
+    </div>
+</body>
+</html>
